@@ -1,0 +1,169 @@
+[versions]
+# Android SDK
+# ===========
+# https://apilevels.com
+# https://source.android.com/docs/setup/about/build-numbers
+# Google Play Target API Requirements:
+# https://support.google.com/googleplay/android-developer/answer/11926878
+# @keep
+compileSdk = "34"
+minSdk = "28"
+
+# Kotlin
+# =======
+# https://kotlinlang.org/docs/releases.html#release-details
+# @pin
+kotlin-lang = "1.9.10"
+# https://github.com/Kotlin/kotlinx.coroutines
+kotlin-coroutines = "1.7.3"
+# Immutable collections for Compose stability/performance
+# https://github.com/Kotlin/kotlinx.collections.immutable
+# https://medium.com/androiddevelopers/jetpack-compose-stability-explained-79c10db270c8
+kotlin-collections-immutable = "0.3.5"
+
+# Java
+# ====
+java = "17"
+
+# Gradle: Ecosystem Plugins
+# ======
+# Android Gradle Plugin
+# https://developer.android.com/reference/tools/gradle-api
+gradle-plugin-android = "8.1.4"
+# Java 8+ API Desugaring Support
+# https://developer.android.com/studio/write/java8-support#library-desugaring
+android-desugarJdkLibs = "2.0.4"
+
+# Gradle: Dependency Management/Build Health
+# =====================
+# Gradle Versions Plugin by Ben Manes
+# https://github.com/ben-manes/gradle-versions-plugin
+plugin-versionsBenManes = "0.48.0"
+# Version Catalog Update Plugin by Hugo Visser
+# https://github.com/littlerobots/version-catalog-update-plugin
+plugin-versionCatalogUpdate = "0.8.1"
+# The Dependency Analysis Gradle Plugin (DAGP) by Tony Robalik
+# https://github.com/autonomousapps/dependency-analysis-android-gradle-plugin
+plugin-dependencyAnalysisAndroid = "1.21.0"
+# Jetpack
+# =======
+# https://developer.android.com/jetpack/androidx/versions#version-table
+androidx-activity = "1.8.1"
+androidx-core = "1.12.0"
+
+## Jetpack: Compose
+## ================
+# https://developer.android.com/jetpack/compose/setup#using-the-bom
+# Note: BOM versioning does not apply to other androidx group libraries
+# that integrate with Compose like activity or lifecycle.
+# Also note: BOM versioning still requires us to have a compatible Kotlin
+# version.
+# https://developer.android.com/jetpack/compose/bom/bom-mapping
+## Reference the below chart for Compose + Kotlin version compatibility
+# https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+compose-bom = "2023.10.01"
+compose-compiler = "1.5.3"
+
+# Testing
+# =======
+# https://mvnrepository.com/artifact/junit/junit
+junit = "4.13.2"
+
+## Testing: AndroidX/Jetpack
+## ==================
+# https://mvnrepository.com/artifact/androidx.test.ext/junit
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+
+[libraries]
+# AndroidX
+# ========
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
+
+## AndroidX: Jetpack Compose
+## =========================
+## Setup: https://developer.android.com/jetpack/compose/setup#setup-compose
+## BOM: https://developer.android.com/jetpack/compose/bom
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+### Compose: Main APIs
+### ------------------------------------------
+compose-ui-core = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+### Compose: Foundation components, Compose components without Material
+### --------------------------------------------------------
+compose-ui-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+### Compose: Material components
+### ----------------------------
+compose-ui-material = { group = "androidx.compose.material", name = "material" }
+compose-ui-material3 = { group = "androidx.compose.material3", name = "material3" }
+### Compose: Animation
+### ------------------
+compose-animation-core = { group = "androidx.compose.animation", name = "animation" }
+compose-animation-graphics = { group = "androidx.compose.animation", name = "animation-graphics" }
+### Compose: Android Studio Preview support
+### ---------------------------------------
+compose-ui-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-uiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+### Compose: UI Testing
+### -------------------
+compose-ui-uiTest-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-uiTest-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+# Gradle: Ecosystem Plugins
+# =====================
+gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle-plugin-android" }
+gradle-plugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-lang" }
+
+
+# Gradle: Android Tooling
+# =======================
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "android-desugarJdkLibs" }
+
+# Gradle: Dependency Updates/Build Health
+# ===============
+gradle-plugin-versionsBenManes = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "plugin-versionsBenManes" }
+gradle-plugin-versionCatalogUpdate = { module = "nl.littlerobots.vcu:plugin", version.ref = "plugin-versionCatalogUpdate" }
+gradle-plugin-dependencyAnalysisAndroid = { module = "com.autonomousapps:dependency-analysis-gradle-plugin", version.ref = "plugin-dependencyAnalysisAndroid" }
+
+# Kotlin: Libraries
+# ============================
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin-lang" }
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib" }
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+kotlin-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable-jvm", version.ref = "kotlin-collections-immutable" }
+
+# Testing
+# =======
+junit-core = { group = "junit", name = "junit", version.ref = "junit" }
+
+## Testing: Kotlin
+## ===============
+kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin-lang" }
+
+## Testing: AndroidX
+## =================
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+[plugins]
+# Android/Kotlin
+# ==============
+android-app = { id = "com.android.application", version.ref = "gradle-plugin-android" }
+android-lib = { id = "com.android.library", version.ref = "gradle-plugin-android" }
+android-test = { id = "com.android.test", version.ref = "gradle-plugin-android" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-lang" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-lang" }
+
+# Gradle: Dependency Management/Build Health
+# ==========================================
+versionsBenManes = { id = "com.github.ben-manes.versions", version.ref = "plugin-versionsBenManes" }
+versionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "plugin-versionCatalogUpdate" }
+dependencyAnalysisAndroid = { id = "com.autonomousapps.dependency-analysis", version.ref = "plugin-dependencyAnalysisAndroid" }
+

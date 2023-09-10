@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CCWCL</string>
+    <string name="launcher_imeji">Imeji</string>
+    <string name="launcher_schedule">Schedule</string>
+    <string name="launcher_circles">Circles</string>
+    <string name="cd_button_photo_select">Select a photo</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CCWCL"
+        tools:targetApi="34">
+        <activity
+            android:name=".ImejiActivity"
+            android:taskAffinity="rt.compose.imeji"
+            android:exported="true"
+            android:label="@string/launcher_imeji"
+            android:theme="@style/Theme.CCWCL">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ScheduleActivity"
+            android:taskAffinity="rt.compose.schedule"
+            android:exported="true"
+            android:label="@string/launcher_schedule"
+            android:theme="@style/Theme.CCWCL">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PolarCoordinatesActivity"
+            android:taskAffinity="rt.compose.custommodifier"
+            android:exported="true"
+            android:label="@string/launcher_circles"
+            android:theme="@style/Theme.CCWCL">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
